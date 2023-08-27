@@ -49,7 +49,7 @@ inquirer.prompt(questions).then(response => {
         })
     }
     else if (response.shape === "triangle"){
-        const triangle = new Square()
+        const triangle = new Triangle()
         triangle.setShapeColor(response.shapeColor)
         triangle.setTextColor(response.textColor)
         triangle.setText(response.text)
