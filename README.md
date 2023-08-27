@@ -6,7 +6,7 @@ Repository:
 https://github.com/CatCorbin/logo-maker
 
 Video Demo:
-
+https://drive.google.com/file/d/1CK7m_s4Zh8Yy9yX5oYIvvoUTM9TlKOXK/view?usp=sharing
 
 
 ## Description
