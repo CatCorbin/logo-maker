@@ -1,5 +1,9 @@
 //packages required for this application
 const inquirer = require("inquirer");
+const fs = require("fs");
+const Circle = require("./lib/circle");
+const Square = require("./lib/square");
+const Triangle = require("./lib/triangle");
 
 //array of questions for input
 const questions = [
@@ -10,7 +14,7 @@ const questions = [
     },
     {
         type: "input",
-        name: "text-color",
+        name: "textColor",
         message: "What color would you like your text to be?",
     },
     {
@@ -21,7 +25,36 @@ const questions = [
     },
     {
         type: "input",
-        name: "shape-color",
+        name: "shapeColor",
         message: "What color would you like your shape?",
     },
 ];
+inquirer.prompt(questions).then(response => {
+    if (response.shape === "circle"){
+        const circle = new Circle()
+        circle.setShapeColor(response.shapeColor)
+        circle.setTextColor(response.textColor)
+        circle.setText(response.text)
+        fs.writeFile("./output/logo.svg", circle.render(), err => {
+            console.log("Generating circle.svg")
+        })
+    }
+    else if (response.shape === "square"){
+        const square = new Square()
+        square.setShapeColor(response.shapeColor)
+        square.setTextColor(response.textColor)
+        square.setText(response.text)
+        fs.writeFile("./output/logo.svg", square.render(), err => {
+            console.log("Generating square.svg")
+        })
+    }
+    else if (response.shape === "triangle"){
+        const triangle = new Square()
+        triangle.setShapeColor(response.shapeColor)
+        triangle.setTextColor(response.textColor)
+        triangle.setText(response.text)
+        fs.writeFile("./output/logo.svg", triangle.render(), err => {
+            console.log("Generating triangle.svg")
+        })
+    }
+})
