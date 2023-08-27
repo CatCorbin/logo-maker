@@ -36,7 +36,7 @@ inquirer.prompt(questions).then(response => {
         circle.setTextColor(response.textColor)
         circle.setText(response.text)
         fs.writeFile("./output/logo.svg", circle.render(), err => {
-            console.log("Generating circle.svg")
+            console.log("Generated logo.svg")
         })
     }
     else if (response.shape === "square"){
@@ -45,7 +45,7 @@ inquirer.prompt(questions).then(response => {
         square.setTextColor(response.textColor)
         square.setText(response.text)
         fs.writeFile("./output/logo.svg", square.render(), err => {
-            console.log("Generating square.svg")
+            console.log("Generated logo.svg")
         })
     }
     else if (response.shape === "triangle"){
@@ -54,7 +54,7 @@ inquirer.prompt(questions).then(response => {
         triangle.setTextColor(response.textColor)
         triangle.setText(response.text)
         fs.writeFile("./output/logo.svg", triangle.render(), err => {
-            console.log("Generating triangle.svg")
+            console.log("Generated logo.svg")
         })
     }
 })
